@@ -1,6 +1,10 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+
+-- Colorschemes
+vim.keymap.set("n", "<leader>1", ":colorscheme tokyonight-night <CR>")
+vim.keymap.set("n", "<leader>2", ":colorscheme rose-pine <CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -46,3 +50,9 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F6>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F7>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F8>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<leader>b', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<leadeb>B', function() require('dap').set_breakpoint() end)

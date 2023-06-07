@@ -13,12 +13,24 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap-python'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+
+  use {"tpope/vim-vinegar"}
+
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
+  })
+
+  use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-tree.lua'
+
+  use({
+	  'folke/tokyonight.nvim'
   })
 
   use({
@@ -35,6 +47,12 @@ return require('packer').startup(function(use)
 
 
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+  use({
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      after = "nvim-treesitter",
+      requires = "nvim-treesitter/nvim-treesitter",
+  })
+
   use("nvim-treesitter/playground")
   use("theprimeagen/harpoon")
   use("theprimeagen/refactoring.nvim")

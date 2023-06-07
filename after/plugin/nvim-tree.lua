@@ -6,7 +6,7 @@ m.setup {
     view = {
         number = true,
         relativenumber = true,
-        width = 80,
+        width = 50,
     },
     filters = {
         custom = { ".git" },
